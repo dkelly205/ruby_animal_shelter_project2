@@ -52,5 +52,10 @@ class TestAnimal < Minitest::Test
      assert_equal(1, @animal.owner_id)
    end
 
+   def test_animal_can_change_status
+     @animal.change_status()
+     assert_equal(false, @animal.adoptable)
+   end
+
 
  end

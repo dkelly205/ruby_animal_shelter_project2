@@ -12,4 +12,11 @@ class Animal
     @image = options["image"]
     @owner_id = options["owner_id"]
   end
+
+  def change_status()
+    @adoptable = !@adoptable
+  end
+
+
+
 end
