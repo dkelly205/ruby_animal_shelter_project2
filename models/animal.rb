@@ -17,6 +17,8 @@ class Animal
     @adoptable = !@adoptable
   end
 
+  
+
 
 
 end
