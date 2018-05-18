@@ -1,16 +1,26 @@
 require( 'minitest/autorun' )
 require_relative '../models/animal.rb'
+require_relative '../models/customer.rb'
 
 class TestAnimal < Minitest::Test
 
   def setup
+
+    @customer = Customer.new({
+      'id' => 1,
+      'name' => 'Bruce Wayne',
+      'address' => '123 Gotham Street, Glasgow, G64 2QR',
+      'phone_number' => '07774045677'
+      })
+
      @animal = Animal.new({
        'name' => 'Alfie',
        'type' => 'Dog',
        'breed' => 'Shitzu',
        'admission_date' => '18/05/2018',
        'adoptable' => true,
-       'image' => 'shitzu.jpeg'
+       'image' => 'shitzu.jpeg',
+       'owner_id' => @customer.id
        })
    end
 
@@ -36,6 +46,10 @@ class TestAnimal < Minitest::Test
 
    def test_animal_image
      assert_equal("shitzu.jpeg", @animal.image())
+   end
+
+   def test_animal_has_owner
+     assert_equal(1, @animal.owner_id)
    end
 
 
