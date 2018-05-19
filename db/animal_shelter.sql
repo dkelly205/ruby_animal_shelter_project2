@@ -18,5 +18,6 @@ CREATE TABLE animals
   breed VARCHAR(255),
   admission_date DATE,
   adoptable BOOLEAN,
-  image VARCHAR(255)
+  image VARCHAR(255),
+  owner_id INT8 references customers(id) ON DELETE CASCADE
 );

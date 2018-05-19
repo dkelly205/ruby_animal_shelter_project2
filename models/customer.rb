@@ -1,3 +1,6 @@
+require_relative('../db/sql_runner.rb')
+
+
 class Customer
 
   attr_reader :id, :name, :address, :phone_number
@@ -16,7 +19,7 @@ class Customer
   end
 
   def self.delete_all
-   sql = "DELETE * FROM customers"
+   sql = "DELETE FROM customers"
    SqlRunner.run(sql)
- end
+  end
 end
