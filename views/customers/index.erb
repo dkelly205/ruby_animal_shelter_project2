@@ -1,6 +1,6 @@
 <h3>Customers</h3>
 
-<% @customers.each do |customer| %>
+<p><a href="/customers/new">Add Customer</a></p>
 
 <table>
   <tr>
@@ -9,6 +9,10 @@
     <th>Contact No</th>
     <th>Number of Animals Adopted</th>
   </tr>
+
+<% @customers.each do |customer| %>
+
+
   <tr>
     <td><%= customer.name %></td>
     <td><%= customer.address %></td>
