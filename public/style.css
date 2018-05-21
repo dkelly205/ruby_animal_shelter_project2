@@ -1,0 +1,9 @@
+table{
+  width:60%;
+}
+
+th, td{
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+
+}

@@ -18,3 +18,9 @@ end
 get "/customers/new" do
   erb(:"customers/new")
 end
+
+get "/customers/:id" do
+  @customer = Customer.find(params[:id])
+  @animals = @customer.animals
+  erb(:"customers/show") 
+end
