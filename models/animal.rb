@@ -53,8 +53,6 @@ class Animal
         return result
       end
 
-
-
   def update()
     sql = "UPDATE animals
     SET
