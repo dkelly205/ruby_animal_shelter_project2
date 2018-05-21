@@ -1,1 +1,21 @@
 <h3>Customers</h3>
+
+<% @customers.each do |customer| %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Contact No</th>
+    <th>Number of Animals Adopted</th>
+  </tr>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.phone_number %></td>
+    <td><%= customer.animals.count() %></td>
+  </tr>
+
+</table>
+
+<% end %>

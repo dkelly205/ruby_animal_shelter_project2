@@ -1,1 +1,11 @@
 <h3>Animals</h3>
+
+<p><a href="/animals/new">Add Animal</a></p>
+
+
+<% for animal in @animals %>
+
+<p><%= animal.name %></p>
+<img src='<%= animal.image %>'/>
+
+<% end %>

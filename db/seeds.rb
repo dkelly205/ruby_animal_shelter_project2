@@ -18,8 +18,32 @@ Animal.delete_all
    'breed' => 'shitzu',
    'admission_date' => '08-Jan-2018',
    'adoptable' => true,
-   'image' => 'n/a',
+   'image' => 'shitzu.jpeg',
    'owner_id' => customer1.id
    })
 
    animal1.save
+
+   animal2 = Animal.new({
+     'name' => 'Whizz',
+     'type' => 'dog',
+     'breed' => 'whippet',
+     'admission_date' => '08-Jan-2018',
+     'adoptable' => true,
+     'image' => 'whippet.jpeg',
+     'owner_id' => customer1.id
+     })
+
+  animal2.save
+
+  animal3 = Animal.new({
+    'name' => 'Rocky',
+    'type' => 'dog',
+    'breed' => 'rottweiller',
+    'admission_date' => '08-Jan-2018',
+    'adoptable' => true,
+    'image' => 'rottweiler.jpeg',
+    'owner_id' => customer1.id
+    })
+
+    animal3.save
