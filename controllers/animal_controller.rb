@@ -9,3 +9,12 @@ get '/animals' do
 end
 
 # create
+post '/animals' do
+  @animal = Animal.new(params)
+  @animal.save
+  redirect to "/animals"
+end
+
+get "/animals/new" do
+  erb(:"animals/new")
+end
