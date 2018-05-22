@@ -12,7 +12,7 @@
 
 <% @customers.each do |customer| %>
   <tr>
-    <td><%= customer.name %></td>
+    <td><a href='/customers/<%= customer.id %>'><%= customer.name %></a></td>
     <td><%= customer.address %></td>
     <td><%= customer.phone_number %></td>
     <td><%= customer.animals.count() %></td>
