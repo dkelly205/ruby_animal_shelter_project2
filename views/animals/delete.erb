@@ -1,0 +1,9 @@
+<p>Are you sure you want to delete <%=@animal.name %>? </p>
+
+
+
+<form action="/animals/<%= @animal.id %>/delete" method="post">
+  <input type="submit" name="delete" value="Yes">
+</form>
+
+<a href="/animals/<%=@animal.id%>">Cancel</a>
