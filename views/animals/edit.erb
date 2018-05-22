@@ -1,0 +1,43 @@
+<h3>Edit Animal</h3>
+
+
+<form action="/animals/<%=@animal.id %>" method="post">
+
+  <p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%=@animal.name%>" required />
+  </p>
+
+  <p>
+    <label for="name">Image:</label>
+    <input type="text" name="image" id="image" value="<%=@animal.image%>" required />
+  </p>
+
+  <p>
+    <label for="name">Type:</label>
+    <input type="text" name="type" id="type" value="<%=@animal.type%>" required />
+  </p>
+
+  <p>
+    <label for="name">Breed:</label>
+    <input type="text" name="breed" id="breed" value="<%=@animal.breed%>" required />
+  </p>
+
+  <p>
+    <label for="adoptable">Adoptable:</label>
+      <select name="adoptable" id="adoptable" value="<%=@animal.adoptable%>" />
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+  </p>
+
+  <p>
+    <label for="admission_date">Admission Date:</label>
+    <input type="date" name="admission_date" id="admission_date" value="<%=@animal.admission_date%>" />
+  </p>
+
+  <input class="form_button" type="submit" value="Save" />
+
+  <a class="button" href="/animals/<%=@animal.id %>">Cancel</a>
+
+</form>
