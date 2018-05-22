@@ -2,6 +2,8 @@
 <p>Address: <%= @customer.address %></p>
 <p>Phone Number: <%= @customer.phone_number %></p>
 
+<a class="button" href="/customers/<%= @customer.id %>/delete"><img class="button_image" src="/delete.png" alt="Delete"/></a>
+
 <% if @customer.animals.count() > 0 %>
 
 <% for animal in @customer.animals() %>

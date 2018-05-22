@@ -22,5 +22,16 @@ end
 get "/customers/:id" do
   @customer = Customer.find(params[:id])
   @animals = @customer.animals
-  erb(:"customers/show") 
+  erb(:"customers/show")
+end
+
+get "/customers/:id/delete" do
+  @customer = Customer.find(params[:id])
+  @animals = @customer.animals
+  erb(:"customers/delete")
+end
+
+post "/customers/:id/delete" do
+  Customer.delete(params[:id])
+  redirect to "/customers"
 end
