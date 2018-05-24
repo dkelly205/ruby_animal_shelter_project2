@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/customer.rb' )
+require_relative( '../models/animal.rb' )
 
 #index
 get '/customers' do
@@ -23,6 +24,26 @@ get "/customers/:id" do
   @customer = Customer.find(params[:id])
   @animals = @customer.animals
   erb(:"customers/show")
+end
+
+
+get "/customers/:id/adoptions" do
+  @customer = Customer.find(params[:id])
+  @animals = Animal.all()
+  erb(:"customers/adoption")
+end
+
+get '/customers/:id/adoptions/:animal_id' do
+  @customer = Customer.find(params[:id])
+  @animal = Animal.find(params[:animal_id])
+  erb(:"adoptions/show")
+end
+
+post '/customers/:id/adoptions/:animal_id' do
+  @customer = Customer.find(params[:id])
+  @animal = Animal.find(params[:animal_id])
+  @animal.assignToCustomer(@customer.id)
+  redirect to "/customers/<%= @customer.id %>"
 end
 
 get "/customers/:id/delete" do

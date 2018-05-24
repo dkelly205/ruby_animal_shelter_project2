@@ -75,8 +75,10 @@ class Animal
     SqlRunner.run( sql, values )
   end
 
-
-
-
+  def adopt()
+    sql = "UPDATE animals SET owner_id = $1 WHERE id = $2"
+    values = [@owner_id, @id]
+    SqlRunner.run(sql,values)
+  end
 
 end

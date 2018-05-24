@@ -1,0 +1,7 @@
+<h3>Are you sure you want to create an adoption between our customer <%= @customer.name %> and our animal <%= @animal.name %>?</h3>
+
+
+<form action="/customers/<%= @customer.id %>/adoptions/<%= @animal.id %>" method="post">
+  <input type="submit" name="adopt" value="Yes">
+</form>
+<a href="/customers/<%= @customer.id %>/adoptions">Cancel</a>

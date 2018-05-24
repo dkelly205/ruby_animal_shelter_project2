@@ -1,6 +1,7 @@
 require_relative('../models/animal.rb')
 require_relative('../models/customer.rb')
 
+Adoption.delete_all
 Customer.delete_all
 Animal.delete_all
 
@@ -19,7 +20,6 @@ Animal.delete_all
    'admission_date' => '08-Jan-2018',
    'adoptable' => true,
    'image' => 'shitzu.jpeg',
-   'owner_id' => customer1.id
    })
 
    animal1.save
@@ -31,7 +31,6 @@ Animal.delete_all
      'admission_date' => '08-Jan-2018',
      'adoptable' => true,
      'image' => 'whippet.jpeg',
-     'owner_id' => customer1.id
      })
 
   animal2.save
@@ -43,7 +42,13 @@ Animal.delete_all
     'admission_date' => '08-Jan-2018',
     'adoptable' => true,
     'image' => 'rottweiler.jpeg',
-    'owner_id' => customer1.id
     })
 
     animal3.save
+
+    adoption1 = Adoption.new({
+      'animal_id' => 1,
+      'customer_id' => 1
+      })
+
+    adoption1.save

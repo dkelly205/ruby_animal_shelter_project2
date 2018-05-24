@@ -1,0 +1,9 @@
+
+<% for animal in @animals %>
+<% if animal.adoptable == 't' %>
+<p><%= animal.name %></p>
+<img src='/<%= animal.image %>'/>
+<a href="/customers/<%= @customer.id %>/adoptions/<%= animal.id %>">Adopt</a>
+
+<%end%>
+<%end%>
