@@ -15,6 +15,16 @@ post '/animals' do
   redirect to "/animals"
 end
 
+get '/availableAnimals' do
+  @animals = Animal.available()
+  erb(:"animals/index")
+end
+
+get '/animalsInCare' do
+  @animals = Animal.incare()
+  erb(:"animals/index")
+end
+
 get "/animals/new" do
   erb(:"animals/new")
 end

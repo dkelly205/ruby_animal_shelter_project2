@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 
 class Animal
 
-  attr_reader :id, :name, :type, :breed, :admission_date, :adoptable, :image, :owner_id
+  attr_reader :id, :name, :type, :breed, :admission_date, :adoptable, :image, :owner_id, :incare
 
   def initialize(options)
     @id = options["id"].to_i()
@@ -12,17 +12,33 @@ class Animal
     @breed = options["breed"]
     @admission_date = options["admission_date"]
     @adoptable = options["adoptable"]
+    @incare = options["incare"]
     @image = options["image"]
-    @owner_id = options["owner_id"]
   end
 
   def change_status()
     @adoptable = !@adoptable
   end
 
+  def self.available
+    sql = "SELECT * FROM animals WHERE animals.adoptable = $1"
+    values = [true]
+    available_animals = SqlRunner.run(sql, values)
+    result = available_animals.map{|available_animal| Animal.new(available_animal)}
+    return result
+  end
+
+  def self.incare
+    sql = "SELECT * FROM animals WHERE animals.incare = $1"
+    values = [true]
+    available_animals = SqlRunner.run(sql, values)
+    result = available_animals.map{|available_animal| Animal.new(available_animal)}
+    return result
+  end
+
   def save()
-    sql = "INSERT INTO animals (name, type, breed, admission_date, adoptable, image, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
-    values = [@name, @type, @breed, @admission_date, @adoptable, @image, @owner_id]
+    sql = "INSERT INTO animals (name, type, breed, admission_date, adoptable, image, incare) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
+    values = [@name, @type, @breed, @admission_date, @adoptable, @image, @incare]
     @id = SqlRunner.run(sql, values)[0]["id"].to_i()
   end
 
@@ -65,20 +81,14 @@ class Animal
     sql = "UPDATE animals
     SET
     (
-      name, type, breed, admission_date, adoptable, image, owner_id
+      name, type, breed, admission_date, adoptable, image, incare
     ) =
     (
       $1, $2, $3, $4, $5, $6, $7
     )
     WHERE id = $8"
-    values = [@name, @type, @breed, @admission_date, @adoptable, @image, @owner_id, @id]
+    values = [@name, @type, @breed, @admission_date, @adoptable, @image, @incare, @id]
     SqlRunner.run( sql, values )
-  end
-
-  def adopt()
-    sql = "UPDATE animals SET owner_id = $1 WHERE id = $2"
-    values = [@owner_id, @id]
-    SqlRunner.run(sql,values)
   end
 
 end

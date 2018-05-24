@@ -1,7 +1,6 @@
-DROP TABLE adoptions;
-DROP TABLE animals;
-DROP TABLE customers;
-
+DROP TABLE IF EXISTS adoptions;
+DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers
 (
@@ -10,7 +9,6 @@ CREATE TABLE customers
   address VARCHAR(255),
   phone_number VARCHAR(255)
 );
-
 
 CREATE TABLE animals
 (
@@ -21,6 +19,7 @@ CREATE TABLE animals
   admission_date DATE,
   adoptable BOOLEAN,
   image VARCHAR(255),
+  incare BOOLEAN
 );
 
 CREATE TABLE adoptions

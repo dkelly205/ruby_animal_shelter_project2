@@ -32,6 +32,14 @@
   </p>
 
   <p>
+    <label for="incare">In Care:</label>
+      <select name="incare" id="incare" value="<%=@animal.incare%>" />
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+  </p>
+
+  <p>
     <label for="admission_date">Admission Date:</label>
     <input type="date" name="admission_date" id="admission_date" value="<%=@animal.admission_date%>" />
   </p>
