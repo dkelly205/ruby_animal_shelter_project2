@@ -16,7 +16,7 @@ post '/animals' do
 end
 
 get '/availableAnimals' do
-  @animals = Animal.available()
+  @animals = Animal.availableToAdopt()
   erb(:"animals/index")
 end
 

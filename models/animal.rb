@@ -20,7 +20,7 @@ class Animal
     @adoptable = !@adoptable
   end
 
-  def self.available
+  def self.availableToAdopt
     sql = "SELECT * FROM animals WHERE animals.adoptable = $1"
     values = [true]
     available_animals = SqlRunner.run(sql, values)

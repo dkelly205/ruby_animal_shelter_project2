@@ -1,7 +1,5 @@
-<h3>Are you sure you want to create an adoption between our customer <%= @customer.name %> and our animal <%= @animal.name %>?</h3>
+<% for adoption in @adoptions %>
 
+<p><a href="/customers/<%= adoption.customer.id%>"><%= adoption.customer.name %></a> adopted <a href="/animals/<%=adoption.animal.id%>"><%= adoption.animal.name %></a> </p><img src="/<%=adoption.animal.image %>"/>
 
-<form action="/customers/<%= @customer.id %>/adoptions/<%= @animal.id %>" method="post">
-  <input type="submit" name="adopt" value="Yes">
-</form>
-<a href="/customers/<%= @customer.id %>/adoptions">Cancel</a>
+<% end %>
