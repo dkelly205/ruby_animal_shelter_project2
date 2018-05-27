@@ -1,5 +1,10 @@
 <% for adoption in @adoptions %>
 
-<p><a href="/customers/<%= adoption.customer.id%>"><%= adoption.customer.name %></a> adopted <a href="/animals/<%=adoption.animal.id%>"><%= adoption.animal.name %></a> </p><img src="/<%=adoption.animal.image %>"/>
+<p><a href="/customers/<%= adoption.customer.id%>"><%= adoption.customer.name %></a> adopted <a href="/animals/<%=adoption.animal.id%>"><%= adoption.animal.name %></a> </p>
+<img src="/<%=adoption.animal.image %>"/>
+
+<a href="/adoptions/<%= adoption.id%>/delete"/>Cancel Adoption</a>
 
 <% end %>
+
+<a href="/adoptions">Back</a>

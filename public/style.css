@@ -1,13 +1,70 @@
 table{
-  width:60%;
+  width:80%;
+  margin:auto;
 }
 
 th, td{
   border-bottom: 1px solid #ddd;
   text-align: center;
+  padding:12px;
+}
 
+th{
+  font-size: 1.25em;
 }
 
 .button_image{
   width:40px;
+}
+
+header {
+  background-color: #6799A3;
+  color: #FFF;
+  height: 160px;
+  text-align: center;
+  padding:10px;
+  font-family: Gabriela;
+  font-size: 1.5em;
+}
+
+header a{
+  color:white;
+  display:inline-block;
+  text-decoration: none;
+  padding:12px;
+}
+
+.button_link a{
+  color:#6799A3;
+  background-color: #FFF;
+  text-decoration: none;
+}
+
+.button_link{
+  border: 1px solid #6799A3;
+  width:270px;
+  border-radius: 5px;
+  padding:8px;
+  text-align: center;
+}
+
+.button_link a:hover{
+  font-weight: bold;
+}
+
+.home{
+  width:500px;
+  height: 300px;
+}
+
+section{
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

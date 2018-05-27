@@ -1,0 +1,9 @@
+<p>Are you sure you want to cancel the adoption of <%=@adoption.animal.name %>? </p>
+
+
+
+<form action="/adoptions/<%= @adoption.id %>/delete" method="post">
+  <input type="submit" name="delete" value="Yes">
+</form>
+
+<a href="/adoptions/animals">Back</a>

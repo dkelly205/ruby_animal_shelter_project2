@@ -25,10 +25,15 @@ get '/adoptions/animals' do
   erb ( :"adoptions/show" )
 end
 
+get "/adoptions/:id/delete" do
+  @adoption = Adoption.find(params[:id])
+  erb(:"adoptions/delete")
+end
 
-
-
-# post "/adoptions/:id/delete" do
-#   Adoption.delete(params[:id])
-#   redirect to "/adoptions"
-# end
+post "/adoptions/:id/delete" do
+  @adoption = Adoption.find(params[:id])
+  @adoption.animal.change_status
+  @adoption.animal.update
+  Adoption.delete(params[:id])
+  redirect to "/adoptions"
+end

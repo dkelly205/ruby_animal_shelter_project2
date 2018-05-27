@@ -62,4 +62,12 @@ class Adoption
       SqlRunner.run( sql, values )
     end
 
+    def self.find(id)
+      sql = "SELECT * FROM adoptions WHERE id = $1"
+      values = [id]
+      adoption = SqlRunner.run(sql, values)
+      result = Adoption.new(adoption.first)
+      return result
+    end
+
 end

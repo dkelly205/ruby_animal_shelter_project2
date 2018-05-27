@@ -16,9 +16,7 @@ class Animal
     @image = options["image"]
   end
 
-  def change_status()
-    @adoptable = !@adoptable
-  end
+
 
   def self.availableToAdopt
     sql = "SELECT * FROM animals WHERE animals.adoptable = $1"
@@ -97,6 +95,11 @@ class Animal
     animals = SqlRunner.run(sql, values)
     result = animals.map { |animal| Animal.new(animal)  }
     return result
+  end
+
+  def change_status()
+    @adoptable = !@adoptable
+    update()
   end
 
 end

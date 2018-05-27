@@ -15,27 +15,39 @@
 
   <p>
     <label for="name">Type:</label>
-    <input type="text" name="breed" id="type" value="<%=@animal.type%>" required />
+    <input type="text" name="type" id="type" value="<%=@animal.type%>" required />
   </p>
 
   <p>
     <label for="name">Breed:</label>
-    <input type="text" name="type" id="cat" value="<%=@animal.breed%>" required />
+    <input type="text" name="breed" id="breed" value="<%=@animal.breed%>" required />
   </p>
 
   <p>
-    <label for="adoptable">Adoptable:</label>
-      <select name="adoptable" id="adoptable" value="<%=@animal.adoptable%>" />
-        <option value="true">true</option>
+    <label for="adoptable">Available For Adoption:</label>
+      <select name="adoptable" id="adoptable" value="<%=@animal.adoptable%>"/>
+        <% if @animal.adoptable == 't' %>
+        <option value="true" selected>true</option>
         <option value="false">false</option>
+        <% else %>
+        <option value="true">true</option>
+        <option value="false" selected>false</option>
+        <% end %>
       </select>
   </p>
 
   <p>
     <label for="incare">In Care:</label>
-      <select name="incare" id="incare" value="<%=@animal.incare%>" />
-        <option value="true">true</option>
+      <select name="incare" id="incare" value="<%=@animal.incare%>"/>
+
+        <% if @animal.incare == 't' %>
+        <option value="true" selected>true</option>
         <option value="false">false</option>
+        <% else %>
+        <option value="true">true</option>
+        <option value="false" selected>false</option>
+        <% end %>
+
       </select>
   </p>
 
