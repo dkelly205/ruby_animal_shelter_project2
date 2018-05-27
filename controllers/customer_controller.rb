@@ -20,6 +20,11 @@ get "/customers/new" do
   erb(:"customers/new")
 end
 
+get "/customers/name" do
+  @customers = Customer.search(params['name'])
+  erb(:"customers/index")
+end
+
 get "/customers/:id" do
   @customer = Customer.find(params[:id])
   @animals = @customer.animals
