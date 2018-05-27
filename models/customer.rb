@@ -66,4 +66,12 @@
         return results.map { |animal| Animal.new(animal) }
       end
 
+      def self.search(name)
+        sql = "SELECT * FROM customers WHERE LOWER(name) = $1"
+        values = [name.downcase]
+        customers = SqlRunner.run(sql, values)
+        result = customers.map { |customer| Customer.new(customer)  }
+        return result
+      end
+
     end
