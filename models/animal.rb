@@ -91,4 +91,11 @@ class Animal
     SqlRunner.run( sql, values )
   end
 
+  def search(breed)
+    sql = "SELECT * FROM animals WHERE LOWER(animals.breed) LIKE %$1%"
+    values = [breed.downcase]
+    SqlRunner.run(sql, values)
+    result = animals.map { |animal| Animal.new(animal)  }
+    return result
+
 end
