@@ -29,6 +29,12 @@ get "/animals/new" do
   erb(:"animals/new")
 end
 
+get "/animals/breed" do
+  @animals = Animal.search(params['breed'])
+  erb(:"animals/index")
+end
+
+
 get "/animals/:id" do
   @animal = Animal.find(params[:id])
   erb(:"animals/show")

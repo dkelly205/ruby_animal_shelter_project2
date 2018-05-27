@@ -6,9 +6,16 @@
 <p><a href="/animals/new">Add Animal</a></p>
 
 
+<form action="/animals/breed" method="GET">
+    <label for="search">Search By Breed:</label>
+    <input type="search" name="breed" id="search">
+</form>
+
+
+
 <% for animal in @animals %>
 
 <p><a href="/animals/<%= animal.id %>"><%= animal.name %></a></p>
-<img src='<%= animal.image %>'/>
+<img src='/<%= animal.image %>'/>
 
 <% end %>
