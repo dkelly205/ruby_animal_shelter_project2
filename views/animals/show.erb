@@ -1,3 +1,9 @@
+<h2>Animal</h2>
+<!-- <section class="show_details"> -->
+
+<p class="back_button"><a href="/animals">Back</a></p>
+
+<section class="details">
 <p>Name: <%= @animal.name %></p>
 <p>Type: <%= @animal.type %></p>
 <p>Breed: <%= @animal.breed %></p>
@@ -6,8 +12,8 @@
 <p>In Care: <%= @animal.incare %></p>
 
 <img src='/<%= @animal.image %>'/>
-
+<section class="icons">
 <a class="button" href="/animals/<%= @animal.id %>/edit"><img class="button_image" src="/edit.png" alt="Update"/></a>
 <a class="button" href="/animals/<%= @animal.id %>/delete"><img class="button_image" src="/delete.png" alt="Delete"/></a>
-
-<a href="/animals">Back</a>
+</section>
+</section>

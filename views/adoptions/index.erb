@@ -1,31 +1,16 @@
-<h3>Create an adoption</h3>
+<h2>Adoptions</h2>
 
-<form class="details" action="/adoptions" method="post">
+<p class="add_button"><a href="/adoptions/new">Create an adoption</a></p>
 
-  <label>
-    <p>
-  Select a customer:
-    <select name="customer_id">
-      <% for customer in @customers %>
-      <option value="<%= customer.id %>"><%= customer.name %>, <%= customer.address %></option>
-      <% end %>
-    </select>
-  </label>
+<content>
+<% for adoption in @adoptions %>
+<section class="animal">
 
+<p><a href="/customers/<%= adoption.customer.id%>"><%= adoption.customer.name %></a> adopted <a href="/animals/<%=adoption.animal.id%>"><%= adoption.animal.name %></a> </p>
+<img src="/<%=adoption.animal.image %>"/>
 
-<label>
-  Select an animal to adopt:
-  <select name="animal_id">
-    <% for animal in @available_animals %>
-    <option value="<%= animal.id %>"><%= animal.name %>, <%= animal.type %>, <%= animal.breed %></option>
-    <% end %>
-  </select>
-</label>
-</p>
+<a href="/adoptions/<%= adoption.id%>/delete"/>Cancel Adoption</a>
+</section>
 
-
-<input class="form_button" type="submit" value="Submit Adoption" />
-
-</form>
-
-<p class="button_link"><a href="/adoptions/animals">View Adoptions</a></p>
+<% end %>
+</content>

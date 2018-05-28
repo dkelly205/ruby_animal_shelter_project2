@@ -6,8 +6,6 @@ require_relative( '../models/adoption.rb' )
 
 get '/adoptions' do
   @adoptions = Adoption.all
-  @customers = Customer.all
-  @available_animals = Animal.availableToAdopt
   erb ( :"adoptions/index" )
 end
 
@@ -20,10 +18,13 @@ post '/adoptions' do
   redirect to("/adoptions")
 end
 
-get '/adoptions/animals' do
+get '/adoptions/new' do
   @adoptions = Adoption.all
-  erb ( :"adoptions/show" )
+  @customers = Customer.all
+  @available_animals = Animal.availableToAdopt
+  erb ( :"adoptions/new" )
 end
+
 
 get "/adoptions/:id/delete" do
   @adoption = Adoption.find(params[:id])

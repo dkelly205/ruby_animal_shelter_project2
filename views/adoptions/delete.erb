@@ -1,9 +1,11 @@
-<p>Are you sure you want to cancel the adoption of <%=@adoption.animal.name %>? </p>
+<h3>Are you sure you want to cancel the adoption of <%=@adoption.animal.name %>? </h3>
 
 
+<section class="form">
 
 <form action="/adoptions/<%= @adoption.id %>/delete" method="post">
   <input type="submit" name="delete" value="Yes">
 </form>
 
-<a href="/adoptions/animals">Back</a>
+<a href="/adoptions">Back</a>
+</section>

@@ -1,21 +1,23 @@
-<h3>Animals</h3>
+<h2>Animals</h2>
 
-<a class="button" href="/">Back</a>
-
-
-<p class="button_link"><a href="/animals/new">Add Animal</a></p>
+<p class="back_button"><a href="/">Back</a></p>
 
 
+
+<section class="search_bar">
 <form action="/animals/breed" method="GET">
     <label for="search">Search By Breed:</label>
     <input type="search" name="breed" id="search">
 </form>
+<p class="add_button"><a href="/animals/new">Add Animal</a></p>
+</section>
 
-
-
+<content>
 <% for animal in @animals %>
-
+<section class="animal">
 <p><a href="/animals/<%= animal.id %>"><%= animal.name %></a></p>
-<img src='/<%= animal.image %>'/>
-
+<img class="animal_img" src='/<%= animal.image %>'/>
+</section>
 <% end %>
+
+</content>
