@@ -51,3 +51,13 @@ Run the app from folder animal_shelter in terminal using the following command:
 View the app at http://localhost:4567/
 
 ![image](https://user-images.githubusercontent.com/34646693/40627417-d39804aa-62b6-11e8-8488-3339722b73e6.png)
+
+
+![image](https://user-images.githubusercontent.com/34646693/40627460-0b7ebd78-62b7-11e8-9e63-eb1a00627129.png)
+
+![image](https://user-images.githubusercontent.com/34646693/40627470-1e582d12-62b7-11e8-80f5-6bb765695a7b.png)
+
+
+![image](https://user-images.githubusercontent.com/34646693/40627467-1651cad8-62b7-11e8-98d4-25f12920e3db.png)
+
+![image](https://user-images.githubusercontent.com/34646693/40627480-273eb73e-62b7-11e8-9c67-6ff51a87f08c.png)
