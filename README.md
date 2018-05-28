@@ -47,3 +47,5 @@ Run the app from folder animal_shelter in terminal using the following command:
                           ruby app.rb
                           
 View the app at http://localhost:4567/
+
+Screen Shot 2018-05-28 at 19.57.43
