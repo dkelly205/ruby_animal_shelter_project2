@@ -44,6 +44,11 @@ Clone the app
 In terminal create the database using the following command:
 
                           createdb animal_shelter
+                          
+In terminal run the following command to create tables:
+
+                         psql -d animal_shelter -f db/animal_shelter.sql
+
 Run the app from folder animal_shelter in terminal using the following command:
 
                           ruby app.rb
